@@ -4,7 +4,6 @@ import threading
 
 HOST = "localhost"
 PORT = 8080
-TIMEOUT = 30
 DOCUMENT_ROOT = "./www"
 
 METHOD_NOT_ALLOWED_RESPONSE = (
@@ -92,7 +91,7 @@ def handle_request(client_socket):
 def start_server():
     s_tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s_tcp.bind((HOST, PORT))
-    s_tcp.listen(TIMEOUT)
+    s_tcp.listen()
 
     print(f"HTTP server started on {HOST}:{PORT}")
 
